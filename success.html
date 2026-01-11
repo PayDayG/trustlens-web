@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement Réussi | TrustLens Elite</title>
+    <style>
+        :root { --gold: #d4af37; --bg: #0f172a; --card: #1e293b; --text: #f8fafc; --green: #10b981; }
+        body { 
+            margin: 0; font-family: 'Inter', system-ui, sans-serif; 
+            background: var(--bg); color: var(--text); 
+            display: flex; align-items: center; justify-content: center; 
+            height: 100vh; text-align: center;
+        }
+        .container { 
+            padding: 50px; background: var(--card); 
+            border-radius: 30px; border: 2px solid var(--green); 
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
+            max-width: 500px;
+        }
+        .icon { font-size: 60px; margin-bottom: 20px; }
+        h1 { color: var(--green); margin-bottom: 15px; }
+        p { color: #94a3b8; font-size: 1.1rem; line-height: 1.6; }
+        .status { 
+            margin-top: 25px; display: inline-block; 
+            padding: 10px 20px; background: rgba(16, 185, 129, 0.1); 
+            color: var(--green); border-radius: 50px; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="icon">✨</div>
+        <h1>Paiement Confirmé !</h1>
+        <p>Merci pour votre achat. Votre extension <b>TrustLens</b> vient d'être mise à jour vers la version <b>Elite</b>.</p>
+        
+        <div class="status" id="statusMsg">Activation en cours...</div>
+
+        <p style="margin-top: 30px; font-size: 0.9rem;">
+            Vous pouvez maintenant fermer cette fenêtre et profiter de l'analyse Deepfake illimitée.
+        </p>
+    </div>
+
+    <script>
+        // REMPLACE "kbmcaljgfikidgmpdgjhiebgchiabnpj" par l'ID de ton extension (chrome://extensions)
+        const EXTENSION_ID = "TON_ID_EXTENSION_ICI";
+
+        // Fonction pour envoyer le signal d'activation à l'extension
+        function activateElite() {
+            if (typeof chrome !== 'undefined' && chrome.runtime) {
+                chrome.runtime.sendMessage(EXTENSION_ID, { action: "activateElite" }, (response) => {
+                    if (chrome.runtime.lastError) {
+                        console.log("Erreur d'envoi : L'ID est peut-être incorrect ou l'extension est désactivée.");
+                        document.getElementById('statusMsg').innerText = "Veuillez rafraîchir la page";
+                    } else {
+                        console.log("Mode Elite activé avec succès !");
+                        document.getElementById('statusMsg').innerText = "Mode Elite Activé ✅";
+                    }
+                });
+            } else {
+                // Si la page est ouverte sur un mobile ou hors Chrome
+                document.getElementById('statusMsg').innerText = "Ouvrez ce lien sur votre navigateur avec l'extension";
+            }
+        }
+
+        // Lancement automatique au chargement de la page
+        window.onload = activateElite;
+    </script>
+</body>
+</html>
