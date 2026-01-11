@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustLens | Détecteur d'IA Elite</title>
+    <style>
+        body {
+            margin: 0; font-family: 'Segoe UI', sans-serif;
+            background: #0f172a; color: white; display: flex;
+            flex-direction: column; align-items: center; justify-content: center;
+            min-height: 100vh; text-align: center;
+        }
+        .container { max-width: 600px; padding: 40px; }
+        .logo { width: 80px; margin-bottom: 20px; }
+        h1 { color: #f1c40f; font-size: 2.5rem; margin-bottom: 10px; }
+        p { color: #94a3b8; font-size: 1.1rem; line-height: 1.6; }
+        
+        .card {
+            background: #1e293b; border: 2px solid #d4af37;
+            padding: 30px; border-radius: 20px; margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .price { font-size: 3rem; font-weight: bold; margin: 15px 0; }
+        .price span { font-size: 1.2rem; color: #94a3b8; }
+
+        .btn-stripe {
+            display: inline-block; background: #d4af37; color: #0f172a;
+            padding: 15px 40px; border-radius: 50px; text-decoration: none;
+            font-weight: bold; font-size: 1.2rem; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        .btn-stripe:hover { transform: scale(1.05); background: #f1c40f; }
+        
+        ul { text-align: left; list-style: none; padding: 0; margin: 20px 0; }
+        li { margin: 10px 0; color: #e2e8f0; }
+        li::before { content: "✅"; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo128.png" alt="TrustLens Logo" class="logo">
+        <h1>TrustLens <span style="color:white">Elite</span></h1>
+        <p>Ne vous laissez plus tromper par les images générées par IA et les Deepfakes.</p>
+
+        <div class="card">
+            <h2>Passer à l'accès Elite</h2>
+            <div class="price">4,49€ <span>/ à vie</span></div>
+            <ul>
+                <li>Détection GenAI illimitée</li>
+                <li><b>Analyse Deepfake (visages) activée</b></li>
+                <li>Priorité sur les serveurs d'analyse</li>
+                <li>Pas de publicité, pas de limite</li>
+            </ul>
+            <a href="https://buy.stripe.com/test_28EdR9cvR8uccOH78v5J600" class="btn-stripe">Activer maintenant</a>
+        </div>
+    </div>
+</body>
+</html>
